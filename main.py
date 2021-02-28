@@ -22,7 +22,7 @@ def create_table(conn):
         inquiry += val
     inquiry += ");"
     # print(inquiry)
-    conn.execute("drop table TESTS")
+    # conn.execute("drop table TESTS") раскомментировать после создания таблицы.
     conn.execute(inquiry)
 
 
@@ -116,13 +116,6 @@ def solve_tests(conn):
     conn.commit()
     print(inquiry)
     print(resultArr)
-    f = open('textResult.txt', 'w')
-    inquery = "select * from TESTS"
-    arr = conn.execute(inquery)
-    rows = arr.fetchall()
-    for row in rows:
-        f.write(str(row) + '\n')
-    f.write(str(resultArr))
 
 
 if __name__ == '__main__':
